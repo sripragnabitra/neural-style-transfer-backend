@@ -6,7 +6,7 @@ import traceback
 from style_transfer import stylize_bytes
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://neural-style-transfer-two.vercel.app"])
 
 @app.route('/stylize', methods=['POST'])
 def stylize():
