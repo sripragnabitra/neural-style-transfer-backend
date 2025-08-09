@@ -6,7 +6,10 @@ import traceback
 from style_transfer import stylize_bytes
 
 app = Flask(__name__)
-CORS(app, origins=["https://neural-style-transfer-two.vercel.app"])
+CORS(app, origins=[
+    "http://localhost:3000",
+    "https://neural-style-transfer-two.vercel.app"
+    ])
 
 @app.route('/', methods=['GET'])
 def home():
