@@ -8,6 +8,10 @@ from style_transfer import stylize_bytes
 app = Flask(__name__)
 CORS(app, origins=["https://neural-style-transfer-two.vercel.app"])
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"status": "Backend is running"})
+
 @app.route('/stylize', methods=['POST'])
 def stylize():
     try:
